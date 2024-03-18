@@ -1,23 +1,29 @@
 $version = "b2453"
 
-class LlamaCpp < Formula
- desc "Inference of Meta's LLaMA model in pure C/C++"
- homepage "https://github.com/ggerganov/llama.cpp"
- url "https://github.com/ggerganov/llama.cpp/archive/refs/tags/#$version.zip"
- version "#$version"
- sha256 "139136ad43ff05dab5b26d0c3b41fe5ee2b872b01f6ec642fe5ea6a8ccabca67"
- license "MIT"
+ class LlamaCpp < Formula
+  desc "Inference of Meta's LLaMA model in pure C/C++"
+  homepage "https://github.com/Narsil/llama.cpp"
 
-def install
-    # Build the project here
-    ENV["LLAMA_METAL_EMBED_LIBRARY"] = "1"
-    system "make"
 
-    # Install the necessary files to the Homebrew installation directory
-    bin.install "main" => "llama"
+  on_arm do
+    arch = "arm64"
+    url "https://github.com/Narsil/llama.cpp/releases/download/prebuild_metal-b2465-2f34f73/llama-prebuild_metal-b1-2f34f73-bin-macos-#{arch}.zip"
+  end
+  on_intel do
+    arch = "x64"
+    url "https://github.com/Narsil/llama.cpp/releases/download/prebuild_metal-b2465-2f34f73/llama-prebuild_metal-b1-2f34f73-bin-macos-#{arch}.zip"
+  end
+  version "prebuild_metal-b2461-5f45c05"
+  sha256 ""
+  license "MIT"
+
+ def install
+     # Install the necessary files to the Homebrew installation directory
+     bin.install "bin/main" => "llama-cli"
+     bin.install "bin/server" => "llama-server"
+  end
+
+  test do
+     system "#{bin}/llama", "--version"
+  end
  end
-
- test do
-    system "#{bin}/llama", "--version"
- end
-end
