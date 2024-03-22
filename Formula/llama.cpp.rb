@@ -4,7 +4,7 @@ class LlamaCpp < Formula
 desc "Inference of Meta's LLaMA model in pure C/C++"
 homepage "https://github.com/ggerganov/llama.cpp"
 
-depends_on: macos
+depends_on :macos
 on_arm do
   arch = "arm64"
 url "https://github.com/ggerganov/llama.cpp/releases/download/#$version/llama-b1-bin-macos-#{arch}.zip"
