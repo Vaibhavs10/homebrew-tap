@@ -5,8 +5,7 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggerganov/llama.cpp"
   version "v-#{$version}"
   # TODO: Find a way to do SHA computation on the fly.
-  sha256
-  "bd085d7bb4616d0affe2dad69c5da069ec0334bdf5333bb52bf4ea678c4e0b89"
+  sha256 "bd085d7bb4616d0affe2dad69c5da069ec0334bdf5333bb52bf4ea678c4e0b89"
   license "MIT"
 
   depends_on :macos
