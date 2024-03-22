@@ -1,11 +1,11 @@
-$version = "b2491"
+$version = "b2494"
 
 class LlamaCpp < Formula
   desc "Inference of Meta's LLaMA model in pure C/C++"
   homepage "https://github.com/ggerganov/llama.cpp"
   version "v-#{$version}"
   # TODO: Find a way to do SHA computation on the fly.
-  sha256 "bd085d7bb4616d0affe2dad69c5da069ec0334bdf5333bb52bf4ea678c4e0b89"
+  sha256 "8159de0d4ca4f998b02d135432193aad774f1077b58888cca691c39eb061a40a"
   license "MIT"
 
   depends_on :macos
