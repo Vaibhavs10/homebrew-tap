@@ -1,19 +1,21 @@
-$version = "b2453"
+$version = "b2491"
 
  class LlamaCpp < Formula
    desc "Inference of Meta's LLaMA model in pure C/C++"
-   homepage "https://github.com/Narsil/llama.cpp"
+   homepage "https://github.com/ggerganov/llama.cpp"
 
    depends_on :macos
    on_arm do
      arch = "arm64"
-     url "https://github.com/Narsil/llama.cpp/releases/download/prebuild_metal-b2465-2f34f73/llama-prebuild_metal-b1-2f34f73-bin-macos-#{arch}.zip"
+     url "https://github.com/ggerganov/llama.cpp/releases/download/#$version/llama-b1-bin-macos-#{arch}.zip"
    end
    on_intel do
      arch = "x64"
-     url "https://github.com/Narsil/llama.cpp/releases/download/prebuild_metal-b2465-2f34f73/llama-prebuild_metal-b1-2f34f73-bin-macos-#{arch}.zip"
+     url "https://github.com/ggerganov/llama.cpp/releases/download/#$version/llama-b1-bin-macos-#{arch}.zip"
    end
-   version "prebuild_metal-b2461-5f45c05"
+   
+   version "#$version"
+   # TODO: Find a way to do SHA computation on the fly. 
    sha256 ""
    license "MIT"
 
