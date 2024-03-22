@@ -16,7 +16,7 @@ $version = "b2491"
    
    version "#$version"
    # TODO: Find a way to do SHA computation on the fly. 
-   sha256 ""
+   sha256 "bd085d7bb4616d0affe2dad69c5da069ec0334bdf5333bb52bf4ea678c4e0b89"
    license "MIT"
 
   def install
