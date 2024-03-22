@@ -9,13 +9,12 @@ class LlamaCpp < Formula
   license "MIT"
 
   depends_on :macos
-  on_arm do
-    arch = "arm64"
-    url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-#{arch}.zip"
-  end
-  on_intel do
-    arch = "x64"
-    url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-#{arch}.zip"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-x64.zip"
+    else
+      url "https://github.com/ggerganov/llama.cpp/releases/download/#{$version}/llama-b1-bin-macos-arm64.zip"
+    end
   end
 
   def install
