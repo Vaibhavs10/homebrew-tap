@@ -12,7 +12,7 @@ sha256 "96017b0693d09f5870155e7215c38764fe152f5cd976c79ddd5046f6c5d33753"
 license "MIT"
 
 def install
-system "make", "-DLLAMA_FATAL_WARNINGS=ON", "-DLLAMA_METAL_EMBED_LIBRARY=ON", "-DLLAMA_CURL=ON"
+system "make", "DLLAMA_FATAL_WARNINGS=ON", "DLLAMA_METAL_EMBED_LIBRARY=ON", "DLLAMA_CURL=ON"
 
 bin.install "#{bin}/main" => "llama-cli"
 bin.install "#{bin}/server" => "llama-server"
