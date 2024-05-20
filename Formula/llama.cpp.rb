@@ -13,11 +13,14 @@ license "MIT"
 depends_on "cmake" => :build
 depends_on "ccache" => :build
 def install
-system "cmake", "-S", ".", "-B", "build", *std_cmake_args
-system "cmake", "--build", "build", "--config", "Release"
+system "mkdir", "build"
+system "cd", "build"
+system "cmake", "-DLLAMA_FATAL_WARNINGS=ON", "-DLLAMA_METAL_EMBED_LIBRARY=ON", "-DLLAMA_CURL=ON", "..", *std_cmake_args
+system "cmake", "--build", ".", "--config", "Release"
+system "cmake", "--install", "."
 
-bin.install "bin/main" => "llama-cli"
-bin.install "bin/server" => "llama-server"
+bin.install "{#bin}/main" => "llama-cli"
+bin.install "{#bin}/server" => "llama-server"
 end
 test do
 # `test do` will create, run in and delete a temporary directory.
