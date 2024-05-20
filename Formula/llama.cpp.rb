@@ -14,8 +14,8 @@ license "MIT"
 def install
 system "make", "DLLAMA_FATAL_WARNINGS=ON", "DLLAMA_METAL_EMBED_LIBRARY=ON", "DLLAMA_CURL=ON"
 
-bin.install "bin/main" => "llama-cli"
-bin.install "bin/server" => "llama-server"
+bin.install "./main" => "llama-cli"
+bin.install "./server" => "llama-server"
 end
 test do
 # `test do` will create, run in and delete a temporary directory.
