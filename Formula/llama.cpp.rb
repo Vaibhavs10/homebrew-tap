@@ -15,7 +15,6 @@ depends_on "ccache" => :build
 def install
 system "cmake", "-S", ".", "-B", "build", *std_cmake_args
 system "cmake", "--build", "build", "--config", "Release"
-system "cmake", "--install", "build"
 
 bin.install "bin/main" => "llama-cli"
 bin.install "bin/server" => "llama-server"
