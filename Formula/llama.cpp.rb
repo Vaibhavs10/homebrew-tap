@@ -10,8 +10,7 @@ tag:      "b2568",
 revision: "be55134a535f7218c53f39211755b1c7550851b2"
 sha256 "96017b0693d09f5870155e7215c38764fe152f5cd976c79ddd5046f6c5d33753"
 license "MIT"
-depends_on "cmake" => :build
-depends_on "ccache" => :build
+
 def install
 system "make", "-DLLAMA_FATAL_WARNINGS=ON", "-DLLAMA_METAL_EMBED_LIBRARY=ON", "-DLLAMA_CURL=ON"
 
