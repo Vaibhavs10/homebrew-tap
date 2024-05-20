@@ -3,8 +3,8 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggerganov/llama.cpp"
   # pull from git tag to get submodules
   url "https://github.com/ggerganov/llama.cpp.git",
-      tag: "b2568",
-      revision: "be55134a535f7218c53f39211755b1c7550851b2"
+  tag: "b2568",
+  revision: "be55134a535f7218c53f39211755b1c7550851b2"
   license "MIT"
 
   def install
