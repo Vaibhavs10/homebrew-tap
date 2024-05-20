@@ -13,8 +13,6 @@ license "MIT"
 depends_on "cmake" => :build
 depends_on "ccache" => :build
 def install
-system "mkdir", "build"
-system "cd", "build"
 system "cmake", "-DLLAMA_FATAL_WARNINGS=ON", "-DLLAMA_METAL_EMBED_LIBRARY=ON", "-DLLAMA_CURL=ON", "..", *std_cmake_args
 system "cmake", "--build", ".", "--config", "Release"
 system "cmake", "--install", "."
