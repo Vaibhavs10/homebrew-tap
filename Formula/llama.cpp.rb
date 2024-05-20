@@ -18,7 +18,7 @@ system "cmake", "--build", "build", "--config", "Release"
 system "cmake", "--install", "build"
 
 # Add an alias for llama-cli
-(bash_completion/"llama-cli").write "alias llama-cli='#{bin}/llama-cli'"
+(bash_completion/"llama-cli").write "alias llama-cli='#{bin}/'"
 end
 test do
 # `test do` will create, run in and delete a temporary directory.
