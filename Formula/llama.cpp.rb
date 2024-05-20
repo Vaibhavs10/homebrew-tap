@@ -15,7 +15,7 @@ class LlamaCpp < Formula
   end
 
   test do
-    llama_cli_command = "llama-cli"
-    assert_includes shell_output(llama_cli_command), "Log start"
+    llama_cli_command = "llama-cli -h"
+    assert_includes shell_output(llama_cli_command), "usage: llama-cli [options]"
   end
 end
