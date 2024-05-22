@@ -7,6 +7,12 @@ class LlamaCpp < Formula
       revision: "95fb0aefab568348da159efdd370e064d1b35f97"
   license "MIT"
 
+  livecheck do
+    throttle 10
+  end
+
+  depends_on arch: :arm64
+  depends_on :macos
   depends_on "curl"
 
   def install
@@ -19,11 +25,11 @@ class LlamaCpp < Formula
   test do
     llama_cli_command = ["llama-cli",
                          "--hf-repo",
-                         "reach-vb/TinyLlama-1.1B-Chat-v0.5-Q2_K-GGUF",
+                         "ggml-org/tiny-llamas",
                          "-m",
-                         "tinyllama-1.1b-chat-v0.5.Q2_K.gguf",
+                         "stories15M-q4_0.gguf",
                          "-n",
                          "400"].join(" ")
-    assert_includes shell_output(llama_cli_command), "ggml_metal_free: deallocating"
+    assert_includes shell_output(llama_cli_command), "<s>"
   end
 end
