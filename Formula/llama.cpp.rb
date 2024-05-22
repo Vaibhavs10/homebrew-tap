@@ -15,7 +15,7 @@ class LlamaCpp < Formula
   end
 
   test do
-    llama_cli_command = "llama-cli --hf-repo reach-vb/TinyLlama-1.1B-Chat-v0.5-Q2_K-GGUF -m tinyllama-1.1b-chat-v0.5.Q2_K.gguf"
+    llama_cli_command = ["llama-cli","--hf-repo", "reach-vb/TinyLlama-1.1B-Chat-v0.5-Q2_K-GGUF", "-m", "tinyllama-1.1b-chat-v0.5.Q2_K.gguf"].join("")
     assert_includes shell_output(llama_cli_command), "ggml_metal_free: deallocating"
   end
 end
