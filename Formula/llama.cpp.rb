@@ -8,7 +8,7 @@ class LlamaCpp < Formula
   license "MIT"
 
   def install
-    system "make", "DLLAMA_FATAL_WARNINGS=ON", "DLLAMA_METAL_EMBED_LIBRARY=ON", "DLLAMA_CURL=ON"
+    system "make", "LLAMA_FATAL_WARNINGS=ON", "LLAMA_METAL_EMBED_LIBRARY=ON", "LLAMA_CURL=ON"
 
     bin.install "./main" => "llama-cli"
     bin.install "./server" => "llama-server"
