@@ -3,7 +3,7 @@ class LlamaCpp < Formula
   homepage "https://github.com/ggerganov/llama.cpp"
   # pull from git tag to get submodules
   url "https://github.com/ggerganov/llama.cpp.git",
-      tag     : "b2950",
+      tag: "b2950",
       revision: "db10f01310beea8a1ef7798651b9d692fd1149d0"
   license "MIT"
 
