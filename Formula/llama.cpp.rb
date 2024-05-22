@@ -31,7 +31,7 @@ class LlamaCpp < Formula
                          "-n",
                          "400",
                          "-p",
-                         "I like big"].join(" ")
+                         "I"].join(" ")
     assert_includes shell_output(llama_cli_command), "<s>"
   end
 end
