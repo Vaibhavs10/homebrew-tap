@@ -12,8 +12,8 @@ class LlamaCpp < Formula
   end
 
   depends_on arch: :arm64
-  depends_on :macos
   depends_on "curl"
+  depends_on :macos
 
   def install
     system "make", "LLAMA_FATAL_WARNINGS=ON", "LLAMA_METAL_EMBED_LIBRARY=ON", "LLAMA_CURL=ON"
@@ -29,7 +29,9 @@ class LlamaCpp < Formula
                          "-m",
                          "stories15M-q4_0.gguf",
                          "-n",
-                         "400"].join(" ")
+                         "400",
+                         "-p",
+                         "I like big"].join(" ")
     assert_includes shell_output(llama_cli_command), "<s>"
   end
 end
