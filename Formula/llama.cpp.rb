@@ -2,7 +2,7 @@ class LlamaCpp < Formula
   desc "LLM inference in C/C++"
   homepage "https://github.com/ggerganov/llama.cpp"
   # pull from git tag to get submodules
-  url "https://github.com/ggerganov/llama.cpp/archive/refs/tags/b2780.tar.gz",
+  url "https://github.com/ggerganov/llama.cpp.git",
       tag:      "b2963",
       revision: "95fb0aefab568348da159efdd370e064d1b35f97"
   license "MIT"
